@@ -64,7 +64,7 @@ struct HomeView: View {
                             }
                         }
                         PollChartView(options: poll.options)
-                            .frame(height: 160)
+                            .frame(height: 120)
                     }
                     .padding(.vertical)
                     .contentShape(Rectangle())

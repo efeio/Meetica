@@ -48,15 +48,26 @@ struct PollView: View {
                 Section("Oy Ver") {
                     ForEach(options) { option in
                         Button(action: {
-                            vm.incrementOption(option)
+                            if vm.votedOptionIds.contains(option.id) {
+                                print("Bu seçeneğe zaten oy verdiniz!")
+                            } else {
+                                vm.incrementOption(option)
+                            }
                         }, label: {
                             HStack {
-                                Text("+1")
+                                Text("•")
                                 Text(option.name)
+                                    .foregroundColor(.primary)
                                 Spacer()
                                 Text(String(option.count))
+                                
+                                if vm.votedOptionIds.contains(option.id) {
+                                    Image(systemName: "checkmark.circle.fill")
+                                        .foregroundColor(.green)
+                                }
                             }
                         })
+                        .disabled(vm.votedOptionIds.contains(option.id))
                     }
                 }
             }
