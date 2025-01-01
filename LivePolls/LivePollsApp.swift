@@ -7,31 +7,51 @@
 
 import FirebaseCore
 import FirebaseFirestore
+import FirebaseAuth
 import SwiftUI
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
+    ) -> Bool {
+        // Firebase uygulamasını yapılandırma
         FirebaseApp.configure()
-        let settings = Firestore.firestore().settings
         
-        settings.cacheSettings = MemoryCacheSettings()
-        Firestore.firestore().settings = settings
+        // Firestore ayarlarını yapılandırma
+        let firestore = Firestore.firestore()
+        let settings = firestore.settings
+        settings.cacheSettings = MemoryCacheSettings() // Bellek önbellek ayarlarını etkinleştir
+        firestore.settings = settings
         
         return true
     }
-    
 }
 
 @main
 struct LivePollsApp: App {
     
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
+    @State private var isUserLoggedIn: Bool = false
     
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                HomeView()
+                if Auth.auth().currentUser != nil {
+                    // Eğer kullanıcı oturumu açık ise direkt olarak ana sayfaya yönlendir
+                    HomeView()
+                        .onAppear {
+                            isUserLoggedIn = true
+                        }
+                } else {
+                    // Kullanıcı oturumu kapalı ise Login sayfası
+                    LoginView()
+                        .onAppear {
+                            isUserLoggedIn = false
+                        }
+                }
             }
         }
     }

@@ -10,6 +10,10 @@
 		5500008F2D12F16100CB66F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5500008E2D12F16100CB66F0 /* GoogleService-Info.plist */; };
 		550000902D12F16100CB66F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5500008E2D12F16100CB66F0 /* GoogleService-Info.plist */; };
 		550000912D12F16100CB66F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5500008E2D12F16100CB66F0 /* GoogleService-Info.plist */; };
+		5505F3482D243B820083B50D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5505F3472D243B820083B50D /* FirebaseAuth */; };
+		55A2F0062D23E9A300F77397 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2F0052D23E9A300F77397 /* SignUpView.swift */; };
+		55A2F0082D23E9BF00F77397 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A2F0072D23E9BF00F77397 /* LoginView.swift */; };
+		55A2F00B2D23EA8100F77397 /* MijickCalendarView in Frameworks */ = {isa = PBXBuildFile; productRef = 55A2F00A2D23EA8100F77397 /* MijickCalendarView */; };
 		8B0285F32A65A601006C4E57 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 8B0285F22A65A601006C4E57 /* RealityKitContent */; };
 		8B0285F52A65A601006C4E57 /* LivePollsVisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0285F42A65A601006C4E57 /* LivePollsVisionApp.swift */; };
 		8B0285F92A65A602006C4E57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B0285F82A65A602006C4E57 /* Assets.xcassets */; };
@@ -82,6 +86,8 @@
 
 /* Begin PBXFileReference section */
 		5500008E2D12F16100CB66F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		55A2F0052D23E9A300F77397 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		55A2F0072D23E9BF00F77397 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		8B0285EE2A65A601006C4E57 /* LivePollsVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivePollsVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B0285F12A65A601006C4E57 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		8B0285F42A65A601006C4E57 /* LivePollsVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePollsVisionApp.swift; sourceTree = "<group>"; };
@@ -136,8 +142,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55A2F00B2D23EA8100F77397 /* MijickCalendarView in Frameworks */,
 				8BA554322A5ABDFD000C793E /* FirebaseFirestore in Frameworks */,
 				8BA554342A5ABDFD000C793E /* FirebaseFirestoreSwift in Frameworks */,
+				5505F3482D243B820083B50D /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +299,8 @@
 			children = (
 				8BD195182A5ADD230091C9E8 /* HomeView.swift */,
 				8BD195202A5AF3C10091C9E8 /* PollView.swift */,
+				55A2F0052D23E9A300F77397 /* SignUpView.swift */,
+				55A2F0072D23E9BF00F77397 /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -362,6 +372,8 @@
 			packageProductDependencies = (
 				8BA554312A5ABDFD000C793E /* FirebaseFirestore */,
 				8BA554332A5ABDFD000C793E /* FirebaseFirestoreSwift */,
+				55A2F00A2D23EA8100F77397 /* MijickCalendarView */,
+				5505F3472D243B820083B50D /* FirebaseAuth */,
 			);
 			productName = LivePolls;
 			productReference = 8BA553FF2A5AB658000C793E /* LivePolls.app */;
@@ -420,6 +432,7 @@
 			mainGroup = 8BA553F62A5AB658000C793E;
 			packageReferences = (
 				8BA554212A5ABDE0000C793E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				55A2F0092D23EA8100F77397 /* XCRemoteSwiftPackageReference "CalendarView" */,
 			);
 			productRefGroup = 8BA554002A5AB658000C793E /* Products */;
 			projectDirPath = "";
@@ -492,10 +505,12 @@
 				8BD195232A5AF3C90091C9E8 /* PollVM.swift in Sources */,
 				8BD1953F2A5AFD1F0091C9E8 /* LivePollsWidgetAttributes.swift in Sources */,
 				8BD195142A5AD6460091C9E8 /* Option.swift in Sources */,
+				55A2F0062D23E9A300F77397 /* SignUpView.swift in Sources */,
 				8BD1951D2A5ADD4F0091C9E8 /* HomeVM.swift in Sources */,
 				8B02860A2A65A64B006C4E57 /* Extension.swift in Sources */,
 				8BD195212A5AF3C10091C9E8 /* PollView.swift in Sources */,
 				8BD1951F2A5AE0220091C9E8 /* PollChartView.swift in Sources */,
+				55A2F0082D23E9BF00F77397 /* LoginView.swift in Sources */,
 				8BD195192A5ADD230091C9E8 /* HomeView.swift in Sources */,
 				8BA554032A5AB658000C793E /* LivePollsApp.swift in Sources */,
 			);
@@ -875,6 +890,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		55A2F0092D23EA8100F77397 /* XCRemoteSwiftPackageReference "CalendarView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Mijick/CalendarView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		8BA554212A5ABDE0000C793E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -886,6 +909,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5505F3472D243B820083B50D /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8BA554212A5ABDE0000C793E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		55A2F00A2D23EA8100F77397 /* MijickCalendarView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55A2F0092D23EA8100F77397 /* XCRemoteSwiftPackageReference "CalendarView" */;
+			productName = MijickCalendarView;
+		};
 		8B0285F22A65A601006C4E57 /* RealityKitContent */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RealityKitContent;
